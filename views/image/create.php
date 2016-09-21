@@ -52,16 +52,15 @@ $items = array();
                             // echo Html::a(Html::img(Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
                             //  ['width' => '50px']), Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"], ['target' => '_blank', 'class' => 'img-thumbnail']);
                             $items[] = [
-                                'url' => $row["name"], 
-                                'src' => $row["name"], 
-                                'options' => array('title' => 'aaa (inside)'),
+                                'url' => "http://localhost".Yii::$app->request->BaseUrl."/".Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
+                                'src' => "http://localhost".Yii::$app->request->BaseUrl."/".Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
                                 ];
                         }   
                     } else {
                         //echo "<span class=\"not-set\">(não possui imagens)</span>";
                     }
 
-                    print_r($items);
+                    //var_dump($items);
             ?>
 <p>
 <br/>
@@ -70,30 +69,26 @@ $items = array();
 
 $items2 = [
     [
-        'url' =>  Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
+        'url' => "http://localhost".Yii::$app->request->BaseUrl."/".Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
         'src' => 'http://farm8.static.flickr.com/7429/9478294690_51ae7eb6c9_s.jpg',
-        'options' => array('title' => 'Camposanto monumentale (inside)')
     ],
     [
         'url' => 'http://farm3.static.flickr.com/2863/9479121747_0b37c63fe7_b.jpg',
         'src' => 'http://farm3.static.flickr.com/2863/9479121747_0b37c63fe7_s.jpg',
-        'options' => array('title' => 'Hafsten - Sunset')
     ],
     [
         'url' => 'http://farm4.static.flickr.com/3712/9478186779_81c2e5f7ef_b.jpg',
         'src' => 'http://farm4.static.flickr.com/3712/9478186779_81c2e5f7ef_s.jpg',
-        'options' => array('title' => 'Sail us to the Moon')
     ],
     [
         'url' => 'http://farm4.static.flickr.com/3789/9476654149_b4545d2f25_b.jpg',
         'src' => 'http://farm4.static.flickr.com/3789/9476654149_b4545d2f25_s.jpg',
-        'options' => array('title' => 'Sail us to the Moon')
     ],
 ];
 
-print_r($items2)
+//var_dump($items2)
 ?>
-<?= dosamigos\gallery\Gallery::widget(['items' => $items2]);?>
+<?= dosamigos\gallery\Gallery::widget(['items' => $items]);?>
 
   </div>
 </div>
