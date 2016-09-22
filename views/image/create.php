@@ -53,6 +53,7 @@ $items = array();
                             //  ['width' => '50px']), Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"], ['target' => '_blank', 'class' => 'img-thumbnail']);
                             $items[] = [
                                 'url' => "http://localhost".Yii::$app->request->BaseUrl."/".Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
+                                'options' => array('width' => '100px'),
                                 'src' => "http://localhost".Yii::$app->request->BaseUrl."/".Yii::$app->params['uploadImage'].$row["contact_id"].'/'.$row["name"],
                                 ];
                         }   
